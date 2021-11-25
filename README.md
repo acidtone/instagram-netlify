@@ -13,6 +13,11 @@ Tutorial: [Using the Instagram API + Serverless Netlify to display your own Phot
 7. Find user id of Instagram account. Not sure why I need to send the token to get this?
     - From the tutorial: 
         - `https://graph.instagram.com/me?access_token={access_token}`
-    - From [this SO](https://stackoverflow.com/questions/11796349/instagram-how-to-get-my-user-id-from-username)
-        - `https://www.instagram.com/{username}/?__a=1`
-        - Which returns lots of info. Trying `graphql/user/fbid`
+    - Also tried the URL from [this SO](https://stackoverflow.com/questions/11796349/instagram-how-to-get-my-user-id-from-username) but it didn't return anything that matched the above id.
+8. Test the token and id:
+    - `https://graph.instagram.com/{user-id}/media?fields=id, caption,link,media_url&access_token={access-token}`
+9. Create a new app for Netlify and copy/paste/update the code from the tutorial into `/netlify/functions/photos.js`.
+    - install `axios` and `dotenv`
+10. Authorized my Github Account on Netlify
+11. Deployed from GH repo.
+12. 
